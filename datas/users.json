@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Enzo Maresca",
+    "ClubId": 1,
+    "email": "enzo.maresca@chelsea.com",
+    "password": "enzo123",
+    "role": "manager"
+  },
+  {
+    "id": 2,
+    "name": "Arne Slot",
+    "ClubId": 2,
+    "email": "arne.slot@liverpool.com",
+    "password": "arne123",
+    "role": "manager"
+  },
+  {
+    "id": 3,
+    "name": "Mikel Arteta",
+    "ClubId": 3,
+    "email": "mikel.arteta@arsenal.com",
+    "password": "mikel123",
+    "role": "manager"
+  },
+  {
+    "id": 4,
+    "name": "Unai Emery",
+    "ClubId": 4,
+    "email": "unai.emery@avfc.co.uk",
+    "password": "unai123",
+    "role": "manager"
+  },
+  {
+    "id": 5,
+    "name": "Thomas Frank",
+    "ClubId": 5,
+    "email": "thomas.frank@brentfordfc.com",
+    "password": "thomas123",
+    "role": "manager"
+  },
+  {
+    "id": 6,
+    "name": "Fabian Hurzeler",
+    "ClubId": 6,
+    "email": "fabian.hurzeler@brightonandhovealbion.com",
+    "password": "fabian123",
+    "role": "manager"
+  },
+  {
+    "id": 7,
+    "name": "Scott Parker",
+    "ClubId": 7,
+    "email": "scott.parker@burnleyfootballclub.com",
+    "password": "scott123",
+    "role": "manager"
+  },
+  {
+    "id": 8,
+    "name": "Andoni Iraola",
+    "ClubId": 8,
+    "email": "andoni.iraola@afcb.co.uk",
+    "password": "andoni123",
+    "role": "manager"
+  },
+  {
+    "id": 9,
+    "name": "Daniel Farke",
+    "ClubId": 9,
+    "email": "daniel.farke@leedsunited.com",
+    "password": "daniel123",
+    "role": "manager"
+  },
+  {
+    "id": 10,
+    "name": "David Moyes",
+    "ClubId": 10,
+    "email": "david.moyes@evertonfc.com",
+    "password": "david123",
+    "role": "manager"
+  },
+  {
+    "id": 11,
+    "name": "Marco Silva",
+    "ClubId": 11,
+    "email": "marco.silva@fulhamfc.com",
+    "password": "marco123",
+    "role": "manager"
+  },
+  {
+    "id": 12,
+    "name": "Eddie Howe",
+    "ClubId": 12,
+    "email": "eddie.howe@nufc.co.uk",
+    "password": "eddie123",
+    "role": "manager"
+  },
+  {
+    "id": 13,
+    "name": "Nuno Espirito Santo",
+    "ClubId": 13,
+    "email": "nuno.santo@nottinghamforest.co.uk",
+    "password": "nuno123",
+    "role": "manager"
+  },
+  {
+    "id": 14,
+    "name": "Pep Guardiola",
+    "ClubId": 14,
+    "email": "pep.guardiola@mancity.com",
+    "password": "pep123",
+    "role": "manager"
+  },
+  {
+    "id": 15,
+    "name": "Ruben Amorim",
+    "ClubId": 15,
+    "email": "ruben.amorim@manutd.com",
+    "password": "ruben123",
+    "role": "manager"
+  },
+  {
+    "id": 16,
+    "name": "Keith Andrews",
+    "ClubId": 16,
+    "email": "keith.andrews@brentfordfc.com",
+    "password": "keith123",
+    "role": "manager"
+  },
+  {
+    "id": 17,
+    "name": "Graham Potter",
+    "ClubId": 17,
+    "email": "graham.potter@westhamunited.co.uk",
+    "password": "graham123",
+    "role": "manager"
+  },
+  {
+    "id": 18,
+    "name": "Vitor Pereira",
+    "ClubId": 18,
+    "email": "vitor.pereira@wolves.co.uk",
+    "password": "vitor123",
+    "role": "manager"
+  },
+  {
+    "id": 19,
+    "name": "Oliver Glasner",
+    "ClubId": 19,
+    "email": "oliver.glasner@cpfc.co.uk",
+    "password": "oliver123",
+    "role": "manager"
+  },
+  {
+    "id": 20,
+    "name": "Julen Lopetegui",
+    "ClubId": 20,
+    "email": "julen.lopetegui@spurs.co.uk",
+    "password": "julen123",
+    "role": "manager"
+  }
+]

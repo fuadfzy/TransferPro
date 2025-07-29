@@ -1,0 +1,22 @@
+[
+  { "id": 1, "clubName": "Chelsea", "transferBudget": 450000000 },
+  { "id": 2, "clubName": "Liverpool", "transferBudget": 390000000 },
+  { "id": 3, "clubName": "Arsenal", "transferBudget": 360000000 },
+  { "id": 4, "clubName": "Aston Villa", "transferBudget": 240000000 },
+  { "id": 5, "clubName": "Brentford", "transferBudget": 150000000 },
+  { "id": 6, "clubName": "Brighton & Hove Albion", "transferBudget": 180000000 },
+  { "id": 7, "clubName": "Burnley", "transferBudget": 120000000 },
+  { "id": 8, "clubName": "AFC Bournemouth", "transferBudget": 165000000 },
+  { "id": 9, "clubName": "Leeds United", "transferBudget": 210000000 },
+  { "id": 10, "clubName": "Everton", "transferBudget": 225000000 },
+  { "id": 11, "clubName": "Fulham", "transferBudget": 180000000 },
+  { "id": 12, "clubName": "Newcastle United", "transferBudget": 360000000 },
+  { "id": 13, "clubName": "Nottingham Forest", "transferBudget": 210000000 },
+  { "id": 14, "clubName": "Manchester City", "transferBudget": 600000000 },
+  { "id": 15, "clubName": "Manchester United", "transferBudget": 450000000 },
+  { "id": 16, "clubName": "Crystal Palace", "transferBudget": 150000000 },
+  { "id": 17, "clubName": "West Ham United", "transferBudget": 210000000 },
+  { "id": 18, "clubName": "Wolverhampton Wanderers", "transferBudget": 135000000 },
+  { "id": 19, "clubName": "Tottenham Hotspur", "transferBudget": 420000000 },
+  { "id": 20, "clubName": "Sheffield United", "transferBudget": 105000000 }
+]

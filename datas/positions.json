@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "positionName": "Goalkeeper"
+  },
+  {
+    "id": 2,
+    "positionName": "Right Back"
+  },
+  {
+    "id": 3,
+    "positionName": "Centre Back"
+  },
+  {
+    "id": 4,
+    "positionName": "Left Back"
+  },
+  {
+    "id": 5,
+    "positionName": "Right Wing Back"
+  },
+  {
+    "id": 6,
+    "positionName": "Left Wing Back"
+  },
+  {
+    "id": 7,
+    "positionName": "Defensive Midfielder"
+  },
+  {
+    "id": 8,
+    "positionName": "Central Midfielder"
+  },
+  {
+    "id": 9,
+    "positionName": "Attacking Midfielder"
+  },
+  {
+    "id": 10,
+    "positionName": "Right Winger"
+  },
+  {
+    "id": 11,
+    "positionName": "Left Winger"
+  },
+  {
+    "id": 12,
+    "positionName": "Second Striker"
+  },
+  {
+    "id": 13,
+    "positionName": "Striker"
+  }
+]
