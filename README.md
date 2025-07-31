@@ -74,7 +74,14 @@ Use **Sequelize** to create the necessary tables in the database.
 npx sequelize-cli db:migrate
 ```
 
-### 5. Start the Server
+### 5. Run Seeder
+
+```bash
+npx sequelize-cli db:seed
+```
+
+
+### 6. Start the Server
 
 Now you can start the server using:
 
@@ -84,7 +91,7 @@ nodemon app.js
 
 The application will be running at `http://localhost:3000`.
 
-### 6. Access the Application
+### 7. Access the Application
 
 - Go to **`http://localhost:3000`** to view the landing page.
 - You can **register**, **login**, and start managing players and clubs.
@@ -99,18 +106,18 @@ The application will be running at `http://localhost:3000`.
 
 ### **Clubs**
 - `GET /clubs` - Get all clubs.
-- `GET /clubs/:id` - Get details of a specific club.
+- `GET /clubs/:clubId` - Get details of a specific club.
+- `GET /clubs/add` - Render add club form
 - `POST /clubs/add` - Add a new club (Owner only).
-- `GET /clubs/:id/players` - Get all players of a specific club.
-- `GET /clubs/:id/players/:playerId/buy` - Buy a player (Owner only).
+- `GET /clubs/delete/:clubId` - Delete listed club. 
+- `GET /clubs/:clubId/players/:playerId` - Get statistics of a player of a specific club.
+
 
 ### **Players**
 - `GET /players` - Get all players.
+- `GET /platers/add` - Render add player form
 - `POST /players/add` - Add a new player.
-- `GET /players/:id` - Get details of a specific player.
-
-### **Positions**
-- `GET /positions` - Get all available positions for players.
+- `GET /players/:playerId/buy` - Buy a player
 
 ## User Roles
 
