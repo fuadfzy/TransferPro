@@ -163,7 +163,13 @@
           <div class="navbar-container">
             <a href="/" class="brand">TransferPro</a>
             <ul class="navbar-links">
-              <li><a href="/">Home</a></li>
+              <li><a href="/clubs">Home</a></li>
+                <% if(session && session.userId !== undefined) { %>
+                    <li style="text-decoration: none;color: #fff;">Logged in as <%= session.role %> of <%= session.clubName %> with <%= userTransferBudget %> transfer budget</span></li>
+                    <li style="text-decoration: none;color: #e74c3c;"><a href="/logout">Log out</a></li>
+                <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                <% } %>
             </ul>
           </div>
         </nav>

@@ -185,7 +185,13 @@
       <div class="navbar-container">
         <a href="/" class="brand">TransferPro</a>
         <ul class="navbar-links">
-          <li><a href="#">Home</a></li>
+          <li><a href="/clubs">Home</a></li>
+          <% if(session && session.userId !== undefined) { %>
+              <li style="text-decoration: none;color: #fff;">Logged in as <%= session.role %> of <%= session.clubName %> with <%= userTransferBudget %> transfer budget</span></li>
+              <li style="text-decoration: none;color: #e74c3c;"><a href="/logout">Log out</a></li>
+          <% } else { %>
+              <li><a href="/login">Login</a></li>
+          <% } %>
         </ul>
       </div>
     </nav>
@@ -194,9 +200,10 @@
   <nav class="sub-navbar">
     <div class="sub-navbar-container">
       <ul class="sub-navbar-links">
-        <li><a href="/players">Players</a></li>
-        <li><a href="/positions">Positions</a></li>
-        <li><a href="/clubs/add">Add Club</a></li>
+        <li><a href="/clubs">Clubs</a></li>
+        <% if(session && session.userId !== undefined) { %>
+            <li><a href="/players/add">Add Players</a></li>
+        <%}%>
       </ul>
     </div>
   </nav>
@@ -204,6 +211,7 @@
   <div class="main-content">
     <div class="container">
       <h1 class="page-title">Player List</h1>
+      <h3><%= `The highest scoring player is ${topScorer.dataValues.name} from ${topScorer.dataValues.club.dataValues.clubName} with ${topScorer.dataValues.goals} goals` %></h3>
 
       <!-- Search Form -->
       <div class="search-form">
@@ -220,6 +228,14 @@
           <button type="submit">Search</button>
         </form>
       </div>
+
+      <% if (errorMessage && errorMessage.length > 0) { %>
+        <ul>
+          <% errorMessage.forEach(err => { %>
+            <li style="color: red;"><%= err %></li>
+          <% }) %>
+        </ul>
+      <% } %>
 
       <table class="player-list">
         <thead>
@@ -240,13 +256,15 @@
             <td><%= player.club.clubName %></td>
             <td>
               <% player.positions.forEach(position => { %>
-                <%= position.positionName %>
+                <li><%= position.positionName %></li>
               <% }) %>
             </td>
             <td><%= player.priceGbp %></td>
             <td>
-              <a href="/clubs/<%= player.ClubId %>/players/<%= player.id %>">See Stat</a> |
-              <a href="/players/<%= player.id %>/buy">Buy</a>
+              <a href="/clubs/<%= player.ClubId %>/players/<%= player.id %>">See Stat</a> 
+              <% if(session && session.userId !== undefined) { %>
+                <a href="/players/<%= player.id %>/buy">Buy</a>
+              <%}%>
             </td>
           </tr>
           <% }) %>

@@ -1,5 +1,6 @@
 const { where } = require('sequelize')
 const { User, Club, Player, Position, Sequelize, sequelize } = require('../models/index')
+const Helper = require(`../helpers/helper`)
 const { options } = require('../routes')
 
 class ClubController {
@@ -22,7 +23,18 @@ class ClubController {
                 }
             })
 
-            res.render('clubPlayerDetail', {choosenPlayer})
+            const session = req.session.userId ? { 
+                userId: req.session.userId, 
+                role: req.session.role, 
+                clubName: req.session.clubName,
+                transferBudget: Helper.getPounds(req.session.transferBudget)
+            } : null;
+
+         
+            const userClub = await Club.findOne({where: {id: req.session.ClubId ? req.session.ClubId : null}})
+            const userTransferBudget = userClub === null ? null : Helper.getPounds(userClub.transferBudget)
+
+            res.render('clubPlayerDetail', {userTransferBudget, choosenPlayer, session})
         }
         catch(err) {
             res.send(err)
@@ -52,7 +64,18 @@ class ClubController {
                 order: [['createdAt', 'DESC']]
             })
 
-            res.render("clubsList", {clubs, deletedClub})
+            const session = req.session.userId ? { 
+                userId: req.session.userId, 
+                role: req.session.role, 
+                clubName: req.session.clubName,
+                transferBudget: Helper.getPounds(req.session.transferBudget)
+            } : null;
+
+
+            const userClub = await Club.findOne({where: {id: req.session.ClubId ? req.session.ClubId : null}})
+            const userTransferBudget = userClub === null ? null : Helper.getPounds(userClub.transferBudget)
+
+            res.render("clubsList", {userTransferBudget, clubs, deletedClub, session})
         }
         catch (err) {
             res.send(err)
@@ -62,7 +85,21 @@ class ClubController {
 
     static async renderAddClub(req,res){
         try {
-            res.render('addClub')
+            const session = req.session.userId ? { 
+                userId: req.session.userId, 
+                role: req.session.role, 
+                clubName: req.session.clubName,
+                transferBudget: Helper.getPounds(req.session.transferBudget)
+            } : null;
+
+
+            const userClub = await Club.findOne({where: {id: req.session.ClubId ? req.session.ClubId : null}})
+            const userTransferBudget = userClub === null ? null : Helper.getPounds(userClub.transferBudget)
+
+
+            res.render('addClub', {userTransferBudget, session})
+
+           
         }
         catch (err) {
             console.log(err)
@@ -109,8 +146,19 @@ class ClubController {
                 }
             })
 
+            const session = req.session.userId ? { 
+                userId: req.session.userId, 
+                role: req.session.role, 
+                clubName: req.session.clubName,
+                transferBudget: Helper.getPounds(req.session.transferBudget)
+            } : null;
+
+    
+            const userClub = await Club.findOne({where: {id: req.session.ClubId ? req.session.ClubId : null}})
+            const userTransferBudget = userClub === null ? null : Helper.getPounds(userClub.transferBudget)
+
             // console.log(choosenClubPlayers)
-            res.render('clubDetail', {choosenClubPlayers})
+            res.render('clubDetail', {userTransferBudget, choosenClubPlayers, session})
         }
         catch(err){
             res.send(err)
