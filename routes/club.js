@@ -1,16 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const Controller = require('../controllers/controller')
+const ClubController = require('../controllers/clubController')
 
-router.get('/', Controller.readClub)
-router.get('/club', Controller.readClub)
-router.get('/club/add', Controller.renderAddClub)
-router.post('/club/add', Controller.handleAddClub)
+router.get('/', ClubController.readClub)
+router.get('/clubs', ClubController.readClub)
+router.get('/clubs/add', ClubController.renderAddClub)
+router.post('/clubs/add', ClubController.handleAddClub)
+router.get('/clubs/delete/:clubId', ClubController.deleteClub)
+router.get('/clubs/:clubId/players/:playerId', ClubController.clubPlayerDetail)
 // router.get('/club/:clubId/player/add', Controller.renderAddPlayer)
 // router.post('/club/:clubId/player/add', Controller.handleAddPlayer)
 // router.get('/club/:clubId/player/:playerId/buy', Controller.handleBuyPlayer)
 // router.get('/club/:clubId/player/:playerId/delete', Controller.handleDelete)
-// router.get('/club/:clubId', Controller.clubDetail)
+router.get('/clubs/:clubId', ClubController.clubDetail)
 
 
 

@@ -190,9 +190,6 @@
         <a href="/" class="brand">TransferPro</a>
         <ul class="navbar-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/players">Players</a></li>
-          <li><a href="/positions">Positions</a></li>
-          <li><a href="/add-club">Add Club</a></li>
         </ul>
       </div>
     </nav>
@@ -202,9 +199,8 @@
   <nav class="sub-navbar">
     <div class="sub-navbar-container">
       <ul class="sub-navbar-links">
-        <li><a href="/players">Players</a></li>
-        <li><a href="/positions">Positions</a></li>
-        <li><a href="/add-club">Add Club</a></li>
+          <li><a href="/players">All Players</a></li>
+          <li><a href="/clubs">Back</a></li>
       </ul>
     </div>
   </nav>
@@ -213,7 +209,7 @@
   <div class="main-content">
     <div class="container">
       <h1 class="page-title">Add a New Club</h1>
-      <form action="/club/add" method="POST" class="add-club-form">
+      <form action="/clubs/add" method="POST" class="add-club-form">
         <div class="form-group">
           <label for="clubName">Club Name</label>
           <input type="text" id="clubName" name="clubName" required placeholder="Enter club name" />

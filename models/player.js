@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+
+const Helper = require('../helpers/helper')
 module.exports = (sequelize, DataTypes) => {
   class Player extends Model {
     /**
@@ -24,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "PlayerId",
         otherKey: 'PositionId'
       })
+    }
+
+    get priceGbp(){
+      return Helper.getPounds(this.price)
     }
   }
   Player.init({

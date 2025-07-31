@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Include your existing CSS here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .navbar-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-left: 20px;
+        }
+
+        .navbar-links li a {
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        .navbar-links li a:hover {
+            color: #e74c3c;
+        }
+
+        .sub-navbar {
+            background-color: #34495e;
+            padding: 10px 0;
+        }
+
+        .sub-navbar-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sub-navbar-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub-navbar-links li {
+            margin: 0 20px;
+        }
+
+        .sub-navbar-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .sub-navbar-links li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Page Content */
+        .main-content {
+            padding: 40px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .page-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        .player-list {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .player-list th, .player-list td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .player-list th {
+            background-color: #34495e;
+            color: #fff;
+        }
+
+        .player-list tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        .player-list tr:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #34495e;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+          <!-- Navbar -->
+      <header>
+        <nav class="navbar">
+          <div class="navbar-container">
+            <a href="/" class="brand">TransferPro</a>
+            <ul class="navbar-links">
+              <li><a href="/">Home</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <nav class="sub-navbar">
+        <div class="sub-navbar-container">
+          <ul class="sub-navbar-links">
+            <li><a href="/players">All Players</a></li>
+            <li><a href="/clubs">Back to Clubs List</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class="main-content">
+        <div class="container">
+          <h1 class="page-title"><%= `List of ${choosenClubPlayers[0].club.clubName}'s Player` %></h1>
+
+          <table class="player-list">
+            <thead>
+              <tr>
+                <th>Player Name</th>
+                <th>Position</th>
+                <th>Age</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            <%let positions = []%>
+              <% choosenClubPlayers.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <% player.positions.forEach(position => { %>
+                    <% positions.push(position.positionName) %>
+                <% }) %>
+                <td>
+                    <%= positions %>
+                    <% positions = [] %>
+                </td>
+                <td><%= player.age %></td>
+                <td><%= player.price %></td>
+                <td><a href="/clubs/<%= player.ClubId %>/players/<%= player.id %>">See stat</a></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-container">
+          <p>&copy; 2025 TransferPro | All Rights Reserved</p>
+        </div>
+      </footer>
+</body>
+</html>
