@@ -79,7 +79,7 @@ npx sequelize-cli db:migrate
 Now you can start the server using:
 
 ```bash
-npm start
+nodemon app.js
 ```
 
 The application will be running at `http://localhost:3000`.
