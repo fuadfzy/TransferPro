@@ -146,6 +146,12 @@ class ClubController {
                 }
             })
 
+            let choosenClub = await Club.findOne({
+                where:{
+                    id: clubId
+                }
+            })
+
             const session = req.session.userId ? { 
                 userId: req.session.userId, 
                 role: req.session.role, 
@@ -158,7 +164,7 @@ class ClubController {
             const userTransferBudget = userClub === null ? null : Helper.getPounds(userClub.transferBudget)
 
             // console.log(choosenClubPlayers)
-            res.render('clubDetail', {userTransferBudget, choosenClubPlayers, session})
+            res.render('clubDetail', {choosenClub, userTransferBudget, choosenClubPlayers, session})
         }
         catch(err){
             res.send(err)
