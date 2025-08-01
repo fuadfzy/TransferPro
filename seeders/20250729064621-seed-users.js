@@ -1,5 +1,6 @@
 'use strict';
 const fs = require('fs').promises
+const bcrypt = require('bcryptjs');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -15,11 +16,14 @@ module.exports = {
     */
     let users = await fs.readFile('./datas/users.json', 'utf-8')
     users = JSON.parse(users)
-    users.forEach(user => {
-      delete user.id
-      user["createdAt"] = new Date()
-      user["updatedAt"] = new Date()
-    });
+    for (let user of users) {
+ 
+      delete user.id;
+
+      user.password = await bcrypt.hash(user.password, 10);
+      user.createdAt = new Date();
+      user.updatedAt = new Date();
+     }
 
     await queryInterface.bulkInsert('Users', users, {})
   },

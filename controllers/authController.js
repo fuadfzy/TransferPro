@@ -2,10 +2,15 @@ const bcrypt = require('bcryptjs')
 const { User, Club } = require('../models/index')
 
 
+
 class AuthController {
     static landing(req, res){
         try {
-            res.render('landing')
+            if (!req.session.userId) {
+                return res.redirect('/login');  // Jika session tidak ada, arahkan ke login
+            }
+
+            res.redirect('/clubs')
         }
         catch(err){
             res.send(err)
