@@ -6,11 +6,11 @@ const { User, Club } = require('../models/index')
 class AuthController {
     static landing(req, res){
         try {
-            if (!req.session.userId) {
-                return res.redirect('/login');  // Jika session tidak ada, arahkan ke login
+            if (req.session.userId) {
+                return res.redirect('/clubs'); 
             }
 
-            res.redirect('/clubs')
+            res.render('landing')
         }
         catch(err){
             res.send(err)
@@ -53,6 +53,9 @@ class AuthController {
         req.session.userId = user.id;
         req.session.role = user.role;
         req.session.ClubId = user.ClubId;
+        const club = await Club.findOne({ where: { id: user.ClubId } })
+        req.session.clubName = club.clubName
+        req.session.transferBudget = club.transferBudget
         res.redirect('/');
     }
     catch(err){
